@@ -1,0 +1,47 @@
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>Slider 2</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!--Carousel Wrapper-->
+<div id="carousel-with-lb" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+  <!--Indicators-->
+  <ol class="carousel-indicators" style="position: relative !important;">
+  	<% 3.times do |i| %>
+  	<li class="<%= cycle("active secondary-color", "default-color", "secondary-color") -%>" data-target="#carousel-with-lb" data-slide-to="<%= i %>"></li>
+  	<% end %>
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides and lightbox-->
+  <div class="carousel-inner mdb-lightbox" role="listbox">
+
+    <div id="mdb-lightbox-ui"></div>
+    <% 3.times do |index| %>
+        <div class=" carousel-item <%= ' active' if index == 0 %> text-center">
+         <% @result.each_with_index do |r,i| %>
+         <% if (i < 6 && index == 0) || (i > 5 && i < 12 && index == 1) || (i > 11 && index == 2) %>
+      <figure class="col-md-4 d-md-inline-block">
+        <a href="/images/slides2/<%= r %>"
+           data-toggle="lightbox" data-gallery="gallery">
+          <img src="/images/slides2/<%= r %>"
+            class="img-fluid">
+        </a>
+      </figure>
+      <% end %>
+      <% end %>
+    </div>
+    <% end %>
+
+  </div>
+  <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+
+<link rel="stylesheet" href="/javascripts/lib/ecco/ekko-lightbox.css">
+<script src="/javascripts/lib/ecco/ekko-lightbox.js"></script>
+<script src="/javascripts/lib/ecco/ekkolightbox.js"></script>

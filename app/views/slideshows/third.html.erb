@@ -1,0 +1,33 @@
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>Slider 3</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<link rel="stylesheet" href="/gallery/css/blueimp-gallery.css">
+<link rel="stylesheet" href="/gallery/css/blueimp-gallery-indicator.css">
+<link rel="stylesheet" href="/gallery/css/main.css">
+
+<div id="links">
+<% @result.each do |slide| %>
+<a href="/images/slides3/<%= slide %>" data-gallery>
+<img src="/images/slides3/<%= slide %>" class = "thumb">
+</a>
+<% end %>
+</div>
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<script src="/gallery/js/blueimp-helper.js"></script>
+<script src="/gallery/js/blueimp-gallery.js"></script>
+<script src="/gallery/js/blueimp-gallery-fullscreen.js"></script>
+<script src="/gallery/js/blueimp-gallery-indicator.js"></script>
+<script src="/gallery/js/jquery.blueimp-gallery.js"></script>

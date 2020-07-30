@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slideshows</title>
+    <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+            <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100 flex-column flex-md-row">
+            <aside class="col-12 col-md-4 p-0 bg-dark flex-shrink-1">
+                <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                    <div class="collapse navbar-collapse ">
+                        <div data-turbolinks="false">
+                            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                                <li class="nav-item"> <a class="nav-link pl-0" href="/"><span class="d-none d-md-inline">Slider 1</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link pl-0" href="/slideshows/second"><span class="d-none d-md-inline">Slider 2</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link pl-0" href="/slideshows/third"><span class="d-none d-md-inline">Slider 3</span></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+            <main class="col bg-faded py-3 flex-grow-1">
+                <%= yield %>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

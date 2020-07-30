@@ -1,0 +1,39 @@
+
+#links {
+width: 80%;
+margin-top: 3em;
+margin-left: auto;
+margin-right: auto;
+}
+
+.thumb {
+width:20%;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+  float:left;
+}
+
+@media (min-width: 481px) {
+  .navigation {
+    list-style: none;
+    padding: 0;
+  }
+  .navigation li {
+    display: inline-block;
+  }
+  .navigation li:not(:first-child):before {
+    content: '| ';
+  }
+}
+
+a:not([href]):not([tabindex]) {
+    color: #fff;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: #fff;
+}
